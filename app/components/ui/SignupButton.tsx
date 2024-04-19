@@ -2,11 +2,7 @@
 
 import useSignupModal from "../auth/hooks/useSignupModal";
 
-type SignupButtonProps = {
-  children: React.ReactNode;
-};
-
-const SignupButton: React.FC<SignupButtonProps> = ({ children }) => {
+const SignupButton = () => {
   const signupModal = useSignupModal();
 
   return (
@@ -17,7 +13,7 @@ const SignupButton: React.FC<SignupButtonProps> = ({ children }) => {
         }}
         className="px-16 py-3 shadow font-bold bg-sky-700 text-white hover:bg-white hover:text-black border border-sky-900"
       >
-        {children}
+        しおりを作成
       </button>
     </>
   );
