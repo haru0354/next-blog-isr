@@ -28,7 +28,7 @@ const schema = z.object({
   slug: z
     .string()
     .min(1, { message: "スラッグの入力は必須です。" })
-    .regex(/^[a-z0-9]+$/, {
+    .regex(/^[a-z0-9-]+$/, {
       message: "スラッグは半角小文字の英数字で入力してください",
     }),
   description: z.string().min(1, { message: "記事の説明の入力は必須です" }),
@@ -163,7 +163,7 @@ export const deletePost = async (data: FormData) => {
     });
     revalidatePath(`/`);
     revalidatePath(`/dashboard/post`);
-    revalidatePath(`/${post?.category.slug}/${post?.slug}`);  
+    revalidatePath(`/${post?.category.slug}/${post?.slug}`);
     await revalidatePostsAndCategories();
 
     if (post?.postImage?.url) {
@@ -283,10 +283,15 @@ export const updatePost = async (
         });
         console.log("関連する画像ライブラリの削除に成功しました。");
       } catch (error) {
-        console.error("関連する画像ライブラリの削除中にエラーが発生しました:", error);
-        return { message: "関連する画像ライブラリの削除中にエラーが発生しました" };
+        console.error(
+          "関連する画像ライブラリの削除中にエラーが発生しました:",
+          error
+        );
+        return {
+          message: "関連する画像ライブラリの削除中にエラーが発生しました",
+        };
       }
-    } 
+    }
   }
 
   try {
