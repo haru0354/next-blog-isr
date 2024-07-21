@@ -4,10 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "プライバシーポリシー・免責事項 | 編集箇所サイト名",
-  robots: {
-    index: false,
-  },
+  title: "サイトマップ | 編集箇所サイト名",
 };
 
 export default async function RootLayout({
