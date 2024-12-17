@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 
+const webSiteTitle = process.env.WEBSITE_TITLE;
+
 export const metadata: Metadata = {
-  title: "記事の一覧",
+  title: {
+    default: "記事一覧",
+    template: `%s | ${webSiteTitle}`,
+  },
 };
 
 export default function RootLayout({
@@ -9,6 +14,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>
-  {children}</>;
+  return <>{children}</>;
 }
