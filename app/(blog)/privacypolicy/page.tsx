@@ -1,13 +1,15 @@
 import Link from "next/link";
 
 const page = () => {
+  const webSiteTitle = process.env.WEBSITE_TITLE;
+
   return (
     <>
       <h2>プライバシーポリシー</h2>
       <p>
         このプライバシーポリシーは、ブログ「
         <Link href="/" className="text-blue-600 font-medium">
-          編集箇所サイト名
+          {webSiteTitle}
         </Link>
         」の利用に関する情報収集、利用、および開示に関する方針を説明します。
       </p>

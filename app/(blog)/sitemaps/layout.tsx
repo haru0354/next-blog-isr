@@ -4,7 +4,7 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
-  title: "サイトマップ | 編集箇所サイト名",
+  title: "サイトマップ",
 };
 
 export default async function RootLayout({
