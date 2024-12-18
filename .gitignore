@@ -37,4 +37,7 @@ yarn-error.log*
 next-env.d.ts
 
 # image
-/public
+public/delete-modal01.jpg
+public/footer-image.png
+public/header-image.png
+public/logo_blog.png

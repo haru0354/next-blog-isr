@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
-  title: "プライバシーポリシー・免責事項 | 編集箇所サイト名",
+  title: "プライバシーポリシー・免責事項",
   robots: {
     index: false,
   },

@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { notoSansJp } from "./components/util/Font";
 
+const webSiteTitle = process.env.NEXT_PUBLIC_WEBSITE_TITLE;
+const webSiteDescription = process.env.NEXT_PUBLIC_WEBSITE_DESCRIPTION;
+
 export const metadata: Metadata = {
-  title: "",
-  description:
-    "",
+  title: `${webSiteTitle}`,
+  description: `${webSiteDescription}`,
 };
 
 export default function RootLayout({
