@@ -9,6 +9,8 @@ import { FileSaveUtils } from "../components/lib/FileSaveUtils";
 import { validateFile } from "../components/lib/ValidateFile";
 import { revalidatePostsAndCategories } from "../components/lib/revalidatePostsAndCategories";
 import { getCategory } from "../components/lib/BlogServiceUnique";
+import { getCurrentUserRole } from "../components/lib/getCurrentUser";
+import { checkUserRole } from "../components/lib/checkUserRole";
 
 type FormState = {
   message?: string | null;
@@ -160,8 +162,13 @@ export const deleteCategory = async (data: FormData) => {
       });
       console.log("関連する画像ライブラリの削除に成功しました。");
     } catch (error) {
-      console.error("関連する画像ライブラリの削除中にエラーが発生しました:", error);
-      return { message: "関連する画像ライブラリの削除中にエラーが発生しました" };
+      console.error(
+        "関連する画像ライブラリの削除中にエラーが発生しました:",
+        error
+      );
+      return {
+        message: "関連する画像ライブラリの削除中にエラーが発生しました",
+      };
     }
   }
 

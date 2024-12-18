@@ -22,6 +22,7 @@ export async function getCurrentUser() {
 
     return response;
   } catch (error) {
+    console.error("セッションの取得に失敗しました:", error);
     return null;
   }
 }
@@ -47,6 +48,7 @@ export async function getCurrentUserId() {
     const userId = response.id;
     return userId;
   } catch (error) {
+    console.error("セッションの取得に失敗しました:", error);
     return null;
   }
 }
@@ -63,6 +65,7 @@ export async function getCurrentUserRole() {
 
     return userRole;
   } catch (error) {
+    console.error("セッションの取得に失敗しました:", error);
     return null;
   }
 }
