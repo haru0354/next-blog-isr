@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const page = () => {
-  const webSiteTitle = process.env.WEBSITE_TITLE;
+  const webSiteTitle = process.env.NEXT_PUBLIC_WEBSITE_TITLE;
 
   return (
     <>

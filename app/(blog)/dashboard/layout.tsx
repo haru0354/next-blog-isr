@@ -3,7 +3,7 @@ import ToastContext from "@/app/components/context/ToastContext";
 import AuthContext from "@/app/components/context/AuthContext";
 import DashboardSideMenu from "@/app/components/blog/dashboard/DashboardSideMenu";
 
-const webSiteTitle = process.env.WEBSITE_TITLE;
+const webSiteTitle = process.env.NEXT_PUBLIC_WEBSITE_TITLE;
 
 export const metadata: Metadata = {
   title: {
