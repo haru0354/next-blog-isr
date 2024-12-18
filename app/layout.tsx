@@ -3,10 +3,11 @@ import "./globals.css";
 import { notoSansJp } from "./components/util/Font";
 
 const webSiteTitle = process.env.NEXT_PUBLIC_WEBSITE_TITLE;
+const webSiteDescription = process.env.NEXT_PUBLIC_WEBSITE_DESCRIPTION;
 
 export const metadata: Metadata = {
   title: `${webSiteTitle}`,
-  description: "",
+  description: `${webSiteDescription}`,
 };
 
 export default function RootLayout({
