@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 import { supabase } from "../components/util/supabase";
 import { fileSaveUtils } from "../lib/fileSaveUtils";
-import { validateFile } from "../components/lib/ValidateFile";
+import { validateFile } from "../lib/validateFile";
 import { revalidatePostsAndCategories } from "../components/lib/revalidatePostsAndCategories";
 import { getCategory } from "../components/lib/BlogServiceUnique";
 import { checkUserRole } from "../lib/checkUserRole"

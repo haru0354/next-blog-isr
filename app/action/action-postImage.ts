@@ -6,7 +6,7 @@ import { supabase } from "../components/util/supabase";
 import { z } from "zod";
 import { promises as fsPromises } from "fs";
 import { fileSaveUtils } from "../lib/fileSaveUtils";
-import { validateFile } from "../components/lib/ValidateFile";
+import { validateFile } from "../lib/validateFile";
 import { getPostImage } from "../components/lib/BlogServiceUnique";
 import { checkUserRole } from "../lib/checkUserRole"
 import prisma from "../lib/prisma";
