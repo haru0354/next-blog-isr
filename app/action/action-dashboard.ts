@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import prisma from "../components/lib/prisma";
 import { z } from "zod";
+import { checkUserRole } from "../components/lib/checkUserRole";
 
 type FormState = {
   message?: string | null;
@@ -19,6 +20,13 @@ const schema = z.object({
 });
 
 export const addDashboardMemo = async (state: FormState, data: FormData) => {
+  const isAdmin = await checkUserRole("admin");
+
+  if (!isAdmin) {
+    console.error("管理者権限が必要です。");
+    return { message: "管理者権限がありません。" };
+  }
+
   const name = data.get("name") as string;
   const content = data.get("content") as string;
 
@@ -52,6 +60,13 @@ export const addDashboardMemo = async (state: FormState, data: FormData) => {
 };
 
 export const deleteDashboardMemo = async (data: FormData) => {
+  const isAdmin = await checkUserRole("admin");
+
+  if (!isAdmin) {
+    console.error("管理者権限が必要です。");
+    return { message: "管理者権限がありません。" };
+  }
+
   const id = data.get("id") as string;
 
   try {
@@ -68,7 +83,18 @@ export const deleteDashboardMemo = async (data: FormData) => {
   redirect("/dashboard");
 };
 
-export const updateDashboardMemo = async (id: number, state: FormState, data: FormData) => {
+export const updateDashboardMemo = async (
+  id: number,
+  state: FormState,
+  data: FormData
+) => {
+  const isAdmin = await checkUserRole("admin");
+
+  if (!isAdmin) {
+    console.error("管理者権限が必要です。");
+    return { message: "管理者権限がありません。" };
+  }
+
   const name = data.get("name") as string;
   const content = data.get("content") as string;
 
@@ -85,7 +111,7 @@ export const updateDashboardMemo = async (id: number, state: FormState, data: Fo
     console.log(errors);
     return errors;
   }
-  
+
   try {
     await prisma.dashboardMemo.update({
       where: {

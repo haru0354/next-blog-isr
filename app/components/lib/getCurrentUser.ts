@@ -22,6 +22,7 @@ export async function getCurrentUser() {
 
     return response;
   } catch (error) {
+    console.error("セッションの取得に失敗しました:", error);
     return null;
   }
 }
@@ -47,6 +48,24 @@ export async function getCurrentUserId() {
     const userId = response.id;
     return userId;
   } catch (error) {
+    console.error("セッションの取得に失敗しました:", error);
+    return null;
+  }
+}
+
+export async function getCurrentUserRole() {
+  try {
+    const session = await getServerSession(authOptions);
+
+    if (!session?.user?.role) {
+      return null;
+    }
+
+    const userRole = session?.user.role
+
+    return userRole;
+  } catch (error) {
+    console.error("セッションの取得に失敗しました:", error);
     return null;
   }
 }

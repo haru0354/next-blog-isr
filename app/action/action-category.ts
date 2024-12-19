@@ -9,6 +9,8 @@ import { FileSaveUtils } from "../components/lib/FileSaveUtils";
 import { validateFile } from "../components/lib/ValidateFile";
 import { revalidatePostsAndCategories } from "../components/lib/revalidatePostsAndCategories";
 import { getCategory } from "../components/lib/BlogServiceUnique";
+import { getCurrentUserRole } from "../components/lib/getCurrentUser";
+import { checkUserRole } from "../components/lib/checkUserRole";
 
 type FormState = {
   message?: string | null;
@@ -39,6 +41,13 @@ const ImageSchema = z.object({
 });
 
 export const addCategory = async (state: FormState, data: FormData) => {
+  const isAdmin = await checkUserRole("admin");
+
+  if (!isAdmin) {
+    console.error("管理者権限が必要です。");
+    return { message: "管理者権限がありません。" };
+  }
+
   const name = data.get("name") as string;
   const slug = data.get("slug") as string;
   const content = data.get("content") as string;
@@ -136,6 +145,13 @@ export const addCategory = async (state: FormState, data: FormData) => {
 };
 
 export const deleteCategory = async (data: FormData) => {
+  const isAdmin = await checkUserRole("admin");
+
+  if (!isAdmin) {
+    console.error("管理者権限が必要です。");
+    return { message: "管理者権限がありません。" };
+  }
+
   const id = data.get("id") as string;
 
   const category = await getCategory("id", id, "postImage");
@@ -160,8 +176,13 @@ export const deleteCategory = async (data: FormData) => {
       });
       console.log("関連する画像ライブラリの削除に成功しました。");
     } catch (error) {
-      console.error("関連する画像ライブラリの削除中にエラーが発生しました:", error);
-      return { message: "関連する画像ライブラリの削除中にエラーが発生しました" };
+      console.error(
+        "関連する画像ライブラリの削除中にエラーが発生しました:",
+        error
+      );
+      return {
+        message: "関連する画像ライブラリの削除中にエラーが発生しました",
+      };
     }
   }
 
@@ -192,6 +213,13 @@ export const updateCategory = async (
   state: FormState,
   data: FormData
 ) => {
+  const isAdmin = await checkUserRole("admin");
+
+  if (!isAdmin) {
+    console.error("管理者権限が必要です。");
+    return { message: "管理者権限がありません。" };
+  }
+  
   const name = data.get("name") as string;
   const content = data.get("content") as string;
   const description = data.get("description") as string;

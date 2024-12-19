@@ -9,6 +9,7 @@ import { promises as fsPromises } from "fs";
 import { FileSaveUtils } from "../components/lib/FileSaveUtils";
 import { validateFile } from "../components/lib/ValidateFile";
 import { getPostImage } from "../components/lib/BlogServiceUnique";
+import { checkUserRole } from "../components/lib/checkUserRole";
 
 const { unlink } = fsPromises;
 
@@ -32,6 +33,13 @@ const updateSchema = z.object({
 });
 
 export const addPostImage = async (state: FormState, data: FormData) => {
+  const isAdmin = await checkUserRole("admin");
+
+  if (!isAdmin) {
+    console.error("管理者権限が必要です。");
+    return { message: "管理者権限がありません。" };
+  }
+
   const image = data.get("image") as File;
   const altText = data.get("altText") as string;
   const validatedFields = schema.safeParse({
@@ -81,6 +89,13 @@ export const addPostImage = async (state: FormState, data: FormData) => {
 };
 
 export const deletePostImage = async (data: FormData) => {
+  const isAdmin = await checkUserRole("admin");
+
+  if (!isAdmin) {
+    console.error("管理者権限が必要です。");
+    return { message: "管理者権限がありません。" };
+  }
+
   const id = data.get("id") as string;
 
   const postImage = await getPostImage(id);
@@ -120,6 +135,13 @@ export const updatePostImage = async (
   state: FormState,
   data: FormData
 ) => {
+  const isAdmin = await checkUserRole("admin");
+
+  if (!isAdmin) {
+    console.error("管理者権限が必要です。");
+    return { message: "管理者権限がありません。" };
+  }
+
   const image = data.get("image") as File;
   const altText = data.get("altText") as string;
 
@@ -151,7 +173,6 @@ export const updatePostImage = async (
       return { message: "altTextを更新する際にエラーが発生しました" };
     }
   }
-
 
   // 画像がある場合は保存してfileUrlを変更
   if (image && image.size > 0) {
