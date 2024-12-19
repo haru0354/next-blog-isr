@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import prisma from "../components/lib/prisma";
 import { z } from "zod";
-import { checkUserRole } from "../components/lib/checkUserRole";
+import { checkUserRole } from "../lib/checkUserRole"
 
 type FormState = {
   message?: string | null;

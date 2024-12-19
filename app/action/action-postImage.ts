@@ -9,7 +9,7 @@ import { promises as fsPromises } from "fs";
 import { fileSaveUtils } from "../lib/fileSaveUtils";
 import { validateFile } from "../components/lib/ValidateFile";
 import { getPostImage } from "../components/lib/BlogServiceUnique";
-import { checkUserRole } from "../components/lib/checkUserRole";
+import { checkUserRole } from "../lib/checkUserRole"
 
 const { unlink } = fsPromises;
 

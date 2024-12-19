@@ -9,7 +9,7 @@ import { fileSaveUtils } from "../lib/fileSaveUtils";
 import { validateFile } from "../components/lib/ValidateFile";
 import { revalidatePostsAndCategories } from "../components/lib/revalidatePostsAndCategories";
 import { getPost } from "../components/lib/BlogServiceUnique";
-import { checkUserRole } from "../components/lib/checkUserRole";
+import { checkUserRole } from "../lib/checkUserRole"
 
 type FormState = {
   message?: string | null;
