@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getPost } from "@/app/lib/service/blogServiceUnique";
 import { getCategories } from "@/app/lib/service/blogServiceMany";
-import { deletePost, updatePost } from "@/app/action/action-post";
+import { deletePost, updatePost } from "@/app/action/actionPost";
 import FormPost from "@/app/components/blog/dashboard/FormPost";
 import DeleteModal from "@/app/components/ui/DeleteModal";
 import Button from "@/app/components/ui/Button";
