@@ -1,4 +1,4 @@
-import { getCurrentUserRole } from "../components/lib/getCurrentUser";
+import { getCurrentUserRole } from "./getCurrentUser";
 
 export const checkUserRole = async (role: string) => {
     try {
