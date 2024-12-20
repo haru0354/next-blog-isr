@@ -1,11 +1,9 @@
+import React from "react";
 import Link from "next/link";
-
+import { getDashboardMemos } from "@/app/lib/service/blogServiceMany";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
-
 import ButtonImage from "../../ui/ButtonImage";
-import React from "react";
-import { getDashboardMemos } from "../../lib/BlogServiceMany";
 
 const ListDashboardMemo = async () => {
   const dashboardMemos = await getDashboardMemos();

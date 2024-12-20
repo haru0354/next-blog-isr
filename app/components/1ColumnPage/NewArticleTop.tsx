@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getPosts } from "../lib/BlogServiceMany";
+import { getPosts } from "../../lib/service/blogServiceMany";
 import AnimatedItem from "../animation/AnimatedItem";
 
 const NewArticleTop = async () => {
