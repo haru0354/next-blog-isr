@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import AnimatedItem from "../lib/AnimatedItem";
+import AnimatedItem from "../animation/AnimatedItem";
 
 type SectionProps = {
   children: ReactNode;
