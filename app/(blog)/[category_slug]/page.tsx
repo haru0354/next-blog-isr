@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getCategory } from "@/app/components/lib/BlogServiceUnique";
+import { getCategory } from "@/app/lib/service/blogServiceUnique";
 import { getCategories } from "@/app//lib/service/blogServiceMany";
 import NotFound from "@/app/not-found";
 import Card from "@/app/components/blog/Card";

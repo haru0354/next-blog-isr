@@ -7,7 +7,7 @@ import { supabase } from "../components/util/supabase";
 import { fileSaveUtils } from "../lib/fileSaveUtils";
 import { validateFile } from "../lib/validateFile";
 import { revalidatePostsAndCategories } from "../lib/revalidatePostsAndCategories";
-import { getCategory } from "../components/lib/BlogServiceUnique";
+import { getCategory } from "../lib/service/blogServiceUnique";
 import { checkUserRole } from "../lib/checkUserRole"
 import prisma from "../lib/prisma";
 
