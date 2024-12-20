@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   deleteDashboardMemo,
   updateDashboardMemo,
-} from "@/app/action/action-dashboard";
+} from "@/app/action/actionDashboard";
 import { getDashboardMemo } from "@/app/lib/service/blogServiceUnique";
 import FormDashboardMemo from "@/app/components/blog/dashboard/FormDashboardMemo";
 import Button from "@/app/components/ui/Button";
