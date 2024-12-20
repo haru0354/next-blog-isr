@@ -2,14 +2,14 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import prisma from "../components/lib/prisma";
 import { supabase } from "../components/util/supabase";
 import { z } from "zod";
 import { promises as fsPromises } from "fs";
-import { FileSaveUtils } from "../components/lib/FileSaveUtils";
-import { validateFile } from "../components/lib/ValidateFile";
-import { getPostImage } from "../components/lib/BlogServiceUnique";
-import { checkUserRole } from "../components/lib/checkUserRole";
+import { fileSaveUtils } from "../lib/fileSaveUtils";
+import { validateFile } from "../lib/validateFile";
+import { getPostImage } from "../lib/service/blogServiceUnique";
+import { checkUserRole } from "../lib/checkUserRole"
+import prisma from "../lib/prisma";
 
 const { unlink } = fsPromises;
 
@@ -70,7 +70,7 @@ export const addPostImage = async (state: FormState, data: FormData) => {
       return errors;
     }
 
-    const { fileUrl, fileName } = await FileSaveUtils(image);
+    const { fileUrl, fileName } = await fileSaveUtils(image);
 
     await prisma.postImage.create({
       data: {
@@ -191,7 +191,7 @@ export const updatePostImage = async (
     }
 
     try {
-      const { fileUrl, fileName } = await FileSaveUtils(image);
+      const { fileUrl, fileName } = await fileSaveUtils(image);
 
       await prisma.postImage.update({
         where: {

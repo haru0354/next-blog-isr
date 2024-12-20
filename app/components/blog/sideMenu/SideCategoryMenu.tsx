@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getCategories } from "../../lib/BlogServiceMany";
+import { getCategories } from "@/app/lib/service/blogServiceMany";
 
 const SideCategoryMenu = async () => {
   const categories = await getCategories("posts");

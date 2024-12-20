@@ -2,14 +2,14 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import prisma from "../components/lib/prisma";
 import { supabase } from "../components/util/supabase";
 import { z } from "zod";
-import { FileSaveUtils } from "../components/lib/FileSaveUtils";
-import { validateFile } from "../components/lib/ValidateFile";
-import { revalidatePostsAndCategories } from "../components/lib/revalidatePostsAndCategories";
-import { getPost } from "../components/lib/BlogServiceUnique";
-import { checkUserRole } from "../components/lib/checkUserRole";
+import { fileSaveUtils } from "../lib/fileSaveUtils";
+import { validateFile } from "../lib/validateFile";
+import { revalidatePostsAndCategories } from "../lib/revalidatePostsAndCategories";
+import { getPost } from "../lib/service/blogServiceUnique";
+import { checkUserRole } from "../lib/checkUserRole"
+import prisma from "../lib/prisma";
 
 type FormState = {
   message?: string | null;
@@ -112,7 +112,7 @@ export const addPost = async (state: FormState, data: FormData) => {
         return errors;
       }
 
-      const { fileUrl, fileName } = await FileSaveUtils(image);
+      const { fileUrl, fileName } = await fileSaveUtils(image);
       const createdImage = await prisma.postImage.create({
         data: {
           name: fileName,
@@ -267,7 +267,7 @@ export const updatePost = async (
         return errors;
       }
 
-      const { fileUrl, fileName } = await FileSaveUtils(image);
+      const { fileUrl, fileName } = await fileSaveUtils(image);
       const createdImage = await prisma.postImage.create({
         data: {
           name: fileName,

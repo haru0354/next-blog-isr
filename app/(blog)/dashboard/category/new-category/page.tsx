@@ -1,4 +1,4 @@
-import { addCategory } from "@/app/action/action-category";
+import { addCategory } from "@/app/action/actionCategory";
 import FormCategory from "@/app/components/blog/dashboard/FormCategory";
 import type { Metadata } from "next";
 

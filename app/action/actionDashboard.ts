@@ -2,9 +2,9 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import prisma from "../components/lib/prisma";
 import { z } from "zod";
-import { checkUserRole } from "../components/lib/checkUserRole";
+import { checkUserRole } from "../lib/checkUserRole"
+import prisma from "../lib/prisma";
 
 type FormState = {
   message?: string | null;
