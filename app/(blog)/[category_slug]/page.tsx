@@ -4,7 +4,7 @@ import { getCategories } from "@/app//lib/service/blogServiceMany";
 import NotFound from "@/app/not-found";
 import Card from "@/app/components/blog/Card";
 import ArticleTop from "@/app/components/blog/contents-area/ArticleTop";
-import Breadcrumbs from "@/app/components/blog/Breadcrumbs";
+import Breadcrumbs from "@/app/components/blog/contents-area/Breadcrumbs";
 import SideMenu from "@/app/components/blog/side-menu/SideMenu";
 import ArticleContentArea from "@/app/components/blog/contents-area/ArticleContentArea";
 
