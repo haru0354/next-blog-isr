@@ -1,6 +1,6 @@
-import SideCategoryMenu from "./sideMenu/SideCategoryMenu";
-import SideNewArticles from "./sideMenu/SideNewArticles";
-import SideTop from "./sideMenu/SideTop";
+import SideCategoryMenu from "./SideCategoryMenu";
+import SideNewArticles from "./SideNewArticles";
+import SideTop from "./SideTop";
 
 const SideMenu = () => {
   return (
