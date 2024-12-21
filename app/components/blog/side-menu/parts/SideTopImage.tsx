@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const SideTop = () => {
+const SideTopImage = () => {
   return (
     <>
       <div className="hover:bg-gray-200 mb-4">
-        <Link href="/memorybook">
+        <Link href="/">
           <Image
-            src="/travel_memory_thumbnail.jpg"
-            alt="旅のメモリーブックのサムネイル"
+            src="/no_image.jpg"
+            alt="海外旅行のしおりアプリ"
             width={240}
             height={174}
             style={{
@@ -17,11 +17,12 @@ const SideTop = () => {
             }}
             className="block mx-auto"
           />
-          <p className="my-2 text-center">海外旅行のしおりアプリ</p>
+          <p className="my-2 text-center">サイドトップ画像リンク
+          </p>
         </Link>
       </div>
     </>
   );
 };
 
-export default SideTop;
+export default SideTopImage;
