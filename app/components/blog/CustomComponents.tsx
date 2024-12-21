@@ -1,5 +1,5 @@
 import { DOMNode, domToReact } from "html-react-parser";
-import CustomLink from "./blogDesignComponents/CustomLink";
+import CustomLink from "./design-components/CustomLink";
 
 // blogのコンテンツにコンポーネントを使用するなら追加していく
 

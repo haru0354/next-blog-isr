@@ -9,7 +9,6 @@ const SideMenu = () => {
         src="/no_image.jpg"
         alt="画像がありません"
         href="/"
-        textTitle=""
       />
       <SideCategoryMenu />
       <SideNewArticles />
