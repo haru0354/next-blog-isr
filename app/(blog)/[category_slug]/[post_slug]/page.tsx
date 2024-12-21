@@ -3,7 +3,7 @@ import { getPosts } from "@/app/lib/service/blogServiceMany";
 import ArticleContentArea from "@/app/components/blog/blogContent/ArticleContentArea";
 import ArticleTop from "@/app/components/blog/blogContent/ArticleTop";
 import Breadcrumbs from "@/app/components/blog/Breadcrumbs";
-import SideMenu from "@/app/components/blog/SideMenu";
+import SideMenu from "@/app/components/blog/side-menu/SideMenu";
 import NotFound from "@/app/not-found";
 
 export async function generateStaticParams() {
