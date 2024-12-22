@@ -1,12 +1,11 @@
-import Link from "next/link";
 import { getCategory } from "@/app/lib/service/blogServiceUnique";
 import { getCategories } from "@/app//lib/service/blogServiceMany";
-import NotFound from "@/app/not-found";
-import Card from "@/app/components/blog/Card";
 import ArticleTop from "@/app/components/blog/contents-area/ArticleTop";
 import Breadcrumbs from "@/app/components/blog/contents-area/Breadcrumbs";
 import SideMenu from "@/app/components/blog/side-menu/SideMenu";
 import ArticleContentArea from "@/app/components/blog/contents-area/ArticleContentArea";
+import RelatedArticles from "@/app/components/blog/contents-area/RelatedArticles";
+import NotFound from "@/app/not-found";
 
 export async function generateStaticParams() {
   const categories = await getCategories("categoryAndPostImage");
@@ -58,14 +57,11 @@ const page = async ({ params }: { params: { category_slug: string } }) => {
           />
         )}
         {category.content && <ArticleContentArea content={category.content} />}
-        <h2 className="p-2 mt-10 text-3xl">{category?.name}の記事一覧</h2>
-        {category.posts.map((post) => {
-          return (
-            <Link href={`/${category.slug}/${post.slug}`} key={post.id}>
-              <Card post={post} />
-            </Link>
-          );
-        })}
+        <RelatedArticles
+          articles={category.posts}
+          categorySlug={category.slug}
+          categoryName={category?.name}
+        />
       </div>
       <div className="w-full md:w-1/4 py-4 bg-white rounded">
         <SideMenu />

@@ -4,9 +4,8 @@ import ArticleContentArea from "@/app/components/blog/contents-area/ArticleConte
 import ArticleTop from "@/app/components/blog/contents-area/ArticleTop";
 import Breadcrumbs from "@/app/components/blog/contents-area/Breadcrumbs";
 import SideMenu from "@/app/components/blog/side-menu/SideMenu";
+import RelatedArticles from "@/app/components/blog/contents-area/RelatedArticles";
 import NotFound from "@/app/not-found";
-import Card from "@/app/components/blog/Card";
-import Link from "next/link";
 
 export async function generateStaticParams() {
   const posts = await getPosts("categoryAndPostImage");
@@ -54,7 +53,7 @@ const Page = async ({
       </div>
     );
   }
-  const filteredCategoryInArticle = category.posts.filter(
+  const filteredCategoryInArticles = category.posts.filter(
     (post) => post.slug !== params.post_slug
   );
 
@@ -71,14 +70,10 @@ const Page = async ({
           記事の投稿日：{formattedCreatedDate}
         </p>
         <ArticleContentArea content={post.content} />
-        <h2 className="p-2 mt-10 text-3xl">関連記事</h2>
-        {filteredCategoryInArticle.map((article) => {
-          return (
-            <Link href={`/${category.slug}/${article.slug}`} key={post.id}>
-              <Card post={article} />
-            </Link>
-          );
-        })}
+        <RelatedArticles
+          articles={filteredCategoryInArticles}
+          categorySlug={category.slug}
+        />
       </div>
       <div className="w-full md:w-1/4 py-4 bg-white rounded">
         <SideMenu />
