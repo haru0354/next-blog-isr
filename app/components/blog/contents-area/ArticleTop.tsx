@@ -24,7 +24,6 @@ const ArticleTop: React.FC<ArticleTopProps> = ({ src, alt }) => {
           className="block mx-auto mb-8 max-w-[650px] max-h-[430px]"
         />
       )}
-      {src}
     </>
   );
 };
