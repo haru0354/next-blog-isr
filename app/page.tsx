@@ -1,6 +1,5 @@
 import Header from "./components/Header";
-import Section from "./components/1ColumnPage/Section";
-import CategoryTop from "./components/1ColumnPage/CategoryTop";
+import TopCategories from "./components/top-page/TopCategories";
 import TopNewArticles from "./components/top-page/TopNewArticles";
 import Footer from "./components/Footer";
 import HeaderImage from "./components/1ColumnPage/HeaderImage";
@@ -13,9 +12,7 @@ export default function Home() {
       <main>
         <div className="w-full">
           <TopNewArticles />
-          <Section bgColor="bg-white" name="カテゴリ">
-            <CategoryTop />
-          </Section>
+          <TopCategories />
         </div>
       </main>
       <Footer />
