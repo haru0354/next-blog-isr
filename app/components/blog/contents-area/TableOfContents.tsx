@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { generateTocId } from "../../lib/generateToc"
+import { generateTocId } from "../../../lib/generateToc"
 
 type TocItem = {
   id: string;
