@@ -4,27 +4,33 @@ import Section from "../section/Section";
 import AnimatedItem from "../animation/AnimatedItem";
 import Button from "../ui/Button";
 
-type RecommendArticleImageRightProps = {
+type RecommendArticleProps = {
   src: string;
   alt: string;
   url: string;
   name: string;
   contents: string[];
+  imageRight?: boolean;
+  bgColor?: string;
 };
 
-const RecommendArticleImageRight: React.FC<RecommendArticleImageRightProps> = ({
+const RecommendArticle: React.FC<RecommendArticleProps> = ({
   src,
   alt,
   url,
   name,
   contents,
+  imageRight = true,
+  bgColor = "bg-gray-200",
 }) => {
   return (
-    <Section name="おすすめの記事" bgColor="bg-gray-200">
+    <Section name="おすすめの記事" bgColor={bgColor}>
       <AnimatedItem
         elementType="div"
         animation="fadeInVariants"
-        className="flex flex-wrap justify-center w-full my-20 py-16 border rounded border-sky-600 bg-white"
+        className={`flex flex-wrap justify-center w-full my-20 py-16 border rounded border-sky-600 bg-white ${
+          imageRight ? "flex-row" : "flex-row-reverse"
+        }`}
       >
         <div className="w-full py-4 mx-14 max-w-[400px] justify-center items-center">
           <h3 className="text-gray-700 mb-6 text-2xl font-semibold ">{name}</h3>
@@ -45,4 +51,4 @@ const RecommendArticleImageRight: React.FC<RecommendArticleImageRightProps> = ({
   );
 };
 
-export default RecommendArticleImageRight;
+export default RecommendArticle;
