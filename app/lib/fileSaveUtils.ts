@@ -7,7 +7,7 @@ import { join } from "path";
 export const fileSaveUtils = async (image: File) => {
   try {
     const bytes = await image.arrayBuffer();
-    const buffer = Buffer.from(bytes);
+    const buffer = new Uint8Array(bytes);
     const fileName = `${Date.now()}_${image.name}`;
     const directory = join("./", "public", "postImage");
     const path = join(directory, fileName);
