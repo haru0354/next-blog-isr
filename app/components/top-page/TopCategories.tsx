@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getCategories } from "../../lib/service/blogServiceMany";
 import AnimatedItem from "../animation/AnimatedItem";
-import Section from "../1ColumnPage/Section";
+import Section from "../section/Section";
 
 const TopCategories = async () => {
   const categories = await getCategories("postsAndPostImage");

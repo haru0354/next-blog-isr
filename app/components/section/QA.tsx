@@ -22,7 +22,7 @@ const QA: React.FC<QAProps> = ({ title, content }) => {
       <AnimatedItem
         elementType="div"
         animation="fadeInVariants"
-        className="border border-gray-600 my-10 p-8 rounded cursor-pointer w-full"
+        className="max-w-[1118px] w-full mx-auto my-10 p-8 border rounded border-gray-600 cursor-pointer"
         onClick={toggleShowContent}
       >
         {isShowContent ? (
