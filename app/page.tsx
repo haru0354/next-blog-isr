@@ -4,7 +4,8 @@ import TopNewArticles from "./components/top-page/TopNewArticles";
 import Footer from "./components/Footer";
 import HeaderImage from "./components/top-page/HeaderImage";
 import RecommendArticle from "./components/section/RecommendArticle";
-import Hero from "./components/1ColumnPage/Hero";
+import Hero from "./components/section/Hero";
+import QA from "./components/1ColumnPage/QA";
 
 export default function Home() {
   return (
@@ -13,7 +14,6 @@ export default function Home() {
       {process.env.NEXT_PUBLIC_HEADER_IMAGE === "true" && <HeaderImage />}
       <main>
         <div className="w-full">
-         
           <RecommendArticle
             src="/no_image.jpg"
             alt="aa"
@@ -31,7 +31,7 @@ export default function Home() {
             contents={["bb", "cc", "dd"]}
             imageRight={false}
           />
-           <Hero
+          <Hero
             title={"aa"}
             subTitle={"gg"}
             contents={[
