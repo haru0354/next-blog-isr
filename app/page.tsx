@@ -4,8 +4,7 @@ import TopNewArticles from "./components/top-page/TopNewArticles";
 import Footer from "./components/Footer";
 import HeaderImage from "./components/top-page/HeaderImage";
 import RecommendArticle from "./components/section/RecommendArticle";
-import Hero from "./components/section/Hero";
-import QA from "./components/1ColumnPage/QA";
+import ThreeColumnIcon from "./components/section/ThreeColumnIcon";
 
 export default function Home() {
   return (
@@ -23,6 +22,15 @@ export default function Home() {
           />
           <TopNewArticles />
           <TopCategories />
+          <ThreeColumnIcon
+            title="このブログで分かること"
+            name1="●●の基礎知識"
+            name2="●●の悩みの解決"
+            name3="●●な疑問"
+            content1="テスト"
+            content2="テスト2"
+            content3="テスト3"
+          />
           <RecommendArticle
             src="/no_image.jpg"
             alt="aa"
@@ -30,15 +38,6 @@ export default function Home() {
             name="aa"
             contents={["bb", "cc", "dd"]}
             imageRight={false}
-          />
-          <Hero
-            title={"aa"}
-            subTitle={"gg"}
-            contents={[
-              "国内旅行・海外旅行で使える",
-              "PC・スマホ・タブレット対応の無料アプリ",
-            ]}
-            href="/"
           />
         </div>
       </main>
