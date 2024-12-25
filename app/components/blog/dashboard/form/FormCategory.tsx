@@ -1,10 +1,10 @@
 "use client";
 
-import Form from "../../ui/Form";
-import Button from "../../ui/Button";
-import TextArea from "../../ui/TextArea";
-import FormImage from "../../ui/FormImage";
 import { useFormState } from "react-dom";
+import Form from "@/app/components/ui/Form";
+import Button from "@/app/components/ui/Button";
+import TextArea from "@/app/components/ui/TextArea";
+import FormImage from "@/app/components/ui/FormImage";
 
 type FormCategoryProps = {
   category?: (Category & { postImage: PostImage | null }) | null;

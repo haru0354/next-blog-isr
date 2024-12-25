@@ -5,7 +5,7 @@ import {
   updateDashboardMemo,
 } from "@/app/action/actionDashboard";
 import { getDashboardMemo } from "@/app/lib/service/blogServiceUnique";
-import FormDashboardMemo from "@/app/components/blog/dashboard/FormDashboardMemo";
+import FormDashboardMemo from "@/app/components/blog/dashboard/form/FormDashboardMemo";
 import Button from "@/app/components/ui/Button";
 import DeleteModal from "@/app/components/ui/DeleteModal";
 

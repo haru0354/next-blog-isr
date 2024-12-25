@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, ChangeEvent } from "react";
-import Button from "../../ui/Button";
-import Form from "../../ui/Form";
-import TextArea from "../../ui/TextArea";
-import toast from "react-hot-toast";
-import { useFormState } from "react-dom";
 import { useRouter } from "next/navigation";
+import { useFormState } from "react-dom";
+import toast from "react-hot-toast";
+import Button from "@/app/components/ui/Button";
+import Form from "@/app/components/ui/Form";
+import TextArea from "@/app/components/ui/TextArea";
 
 type FormMemoProps = {
   dashboardMemo?: DashboardMemo | null;
