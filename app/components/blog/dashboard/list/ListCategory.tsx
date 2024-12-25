@@ -1,6 +1,6 @@
-import Button from "../../ui/Button";
 import Link from "next/link";
-import { getCategories } from "../../../lib/service/blogServiceMany";
+import { getCategories } from "@/app/lib/service/blogServiceMany";
+import Button from "@/app/components/ui/Button";
 
 const ListCategory = async () => {
   const categories = await getCategories();
