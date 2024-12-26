@@ -1,7 +1,7 @@
 import Breadcrumbs from "./parts/Breadcrumbs";
 import ArticleTop from "./parts/ArticleTop";
 import ArticleContentArea from "./parts/ArticleContentArea";
-import RelatedArticles from "./RelatedArticles";
+import RelatedArticles from "./related-articles/RelatedArticles";
 import NotFound from "../../../not-found";
 
 type LeftColumnProps = {
