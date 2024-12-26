@@ -109,7 +109,7 @@ const LeftColumn: React.FC<LeftColumnProps> = ({
           {filteredCategoryInArticles && (
             <RelatedArticles
               articles={filteredCategoryInArticles}
-              categorySlug={category?.slug || ""}
+              categorySlug={post.category.slug}
             />
           )}
         </>

@@ -57,7 +57,7 @@ const Page = async ({
   return (
     <>
       <LeftColumn
-        categoryPage={true}
+        categoryPage={false}
         post={post}
         formattedCreatedDate={formattedCreatedDate}
         filteredCategoryInArticles={filteredCategoryInArticles}
