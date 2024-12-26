@@ -1,4 +1,4 @@
-import Breadcrumbs from "./Breadcrumbs";
+import Breadcrumbs from "./parts/Breadcrumbs";
 import ArticleTop from "./parts/ArticleTop";
 import ArticleContentArea from "./parts/ArticleContentArea";
 import RelatedArticles from "./RelatedArticles";
