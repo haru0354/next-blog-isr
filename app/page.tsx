@@ -1,5 +1,5 @@
 import Header from "./components/Header";
-import TopCategories from "./components/top-page/TopCategories";
+import TopCategories from "./components/section/TopCategories";
 import TopNewArticles from "./components/section/TopNewArticles";
 import Footer from "./components/Footer";
 import HeaderImage from "./components/section/HeaderImage";
