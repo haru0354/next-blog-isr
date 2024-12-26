@@ -9,8 +9,8 @@ type RelatedArticlesProps = {
 
 type Article = {
   id: number;
-  createdDate: Date;
-  updatedDate: Date;
+  createdDate: string | Date;
+  updatedDate: string | Date;
   title: string;
   content: string;
   categoryId: number;
