@@ -4,12 +4,8 @@ import SideNewArticles from "./parts/SideNewArticles";
 
 const SideMenu = () => {
   return (
-    <div className="flex flex-col justify-center items-center bg-white rounded py-2">
-      <SideImage
-        src="/no_image.jpg"
-        alt="画像がありません"
-        href="/"
-      />
+    <div className="flex flex-col items-center w-full md:w-1/4 py-8 bg-white rounded">
+      <SideImage src="/no_image.jpg" alt="画像がありません" href="/" />
       <SideCategoryMenu />
       <SideNewArticles />
       <SideImage

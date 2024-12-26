@@ -27,8 +27,8 @@ const Hero: React.FC<HeroProps> = ({ title, subTitle, contents, href }) => {
           <p className="font-bold mb-4 text-lg md:text-2xl text-sky-500">
             「{subTitle}」
           </p>
-          {contents.map((content) => (
-            <p className="mb-2">{content}</p>
+          {contents.map((content, index) => (
+            <p className="mb-2" key={index}>{content}</p>
           ))}
           <Link href={href}>
             <Button color="blue" size="normal">
