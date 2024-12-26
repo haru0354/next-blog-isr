@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import parse from "html-react-parser";
 import DOMPurify from "dompurify";
 import { addGenerateContentId } from "../../../../lib/generateToc"
-import TableOfContents from "../TableOfContents";
+import TableOfContents from "./TableOfContents";
 import CustomComponents from "../../design-components/CustomComponents";
 
 type ArticleContentAreaProps = {
