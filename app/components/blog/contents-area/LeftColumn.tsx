@@ -1,5 +1,5 @@
 import Breadcrumbs from "./Breadcrumbs";
-import ArticleTop from "./ArticleTop";
+import ArticleTop from "./parts/ArticleTop";
 import ArticleContentArea from "./parts/ArticleContentArea";
 import RelatedArticles from "./RelatedArticles";
 import NotFound from "../../../not-found";
