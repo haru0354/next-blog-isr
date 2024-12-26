@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HeaderImage = () => {
   return (
-    <div className="bg-sky-100 w-full">
+    <section className="bg-sky-100 w-full">
       <Image
         src="/header-image.png"
         alt="alt"
@@ -11,7 +11,7 @@ const HeaderImage = () => {
         className="mx-auto"
         priority
       />
-    </div>
+    </section>
   );
 };
 

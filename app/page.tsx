@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import TopCategories from "./components/top-page/TopCategories";
 import TopNewArticles from "./components/top-page/TopNewArticles";
 import Footer from "./components/Footer";
-import HeaderImage from "./components/top-page/HeaderImage";
+import HeaderImage from "./components/section/HeaderImage";
 import RecommendArticle from "./components/section/RecommendArticle";
 import ThreeColumnIcon from "./components/section/ThreeColumnIcon";
 

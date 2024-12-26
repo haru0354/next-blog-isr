@@ -7,6 +7,10 @@ import Section from "../section/Section";
 const TopCategories = async () => {
   const categories = await getCategories("postsAndPostImage");
 
+  if (!categories) {
+    return null;
+  }
+
   return (
     <Section bgColor="bg-white" name="カテゴリ">
       <div className="flex w-full my-8 flex-wrap items-center justify-center">
