@@ -37,9 +37,7 @@ const page = async ({ params }: { params: { category_slug: string } }) => {
   return (
     <>
       <LeftColumn categoryPage={true} category={category} />
-      <div className="w-full md:w-1/4 py-4 bg-white rounded">
         <SideMenu />
-      </div>
     </>
   );
 };

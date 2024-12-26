@@ -62,9 +62,7 @@ const Page = async ({
         formattedCreatedDate={formattedCreatedDate}
         filteredCategoryInArticles={filteredCategoryInArticles}
       />
-      <div className="w-full md:w-1/4 py-4 bg-white rounded">
         <SideMenu />
-      </div>
     </>
   );
 };
