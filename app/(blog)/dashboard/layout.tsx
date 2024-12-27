@@ -7,7 +7,7 @@ const webSiteTitle = process.env.NEXT_PUBLIC_WEBSITE_TITLE;
 
 export const metadata: Metadata = {
   title: {
-    default: "",
+    default: "ダッシュボードのメモ",
     template: `%s | ${webSiteTitle}`,
   },
   robots: {
