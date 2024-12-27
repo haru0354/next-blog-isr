@@ -84,7 +84,7 @@ const DashboardSideMenu = () => {
                     icon={faList}
                     className="mr-2 w-5 h-4 mt-1"
                   />
-                  カテゴリー一覧
+                  カテゴリ一覧
                 </li>
               </Link>
               <Link href="/dashboard/category/new-category">
@@ -93,7 +93,7 @@ const DashboardSideMenu = () => {
                     icon={faList}
                     className="mr-2 w-5 h-4 mt-1"
                   />
-                  新規カテゴリー
+                  新規カテゴリ
                 </li>
               </Link>
             </ul>
@@ -182,12 +182,12 @@ const DashboardSideMenu = () => {
                 <li className="py-2 mt-3 border-b">カテゴリー</li>
                 <Link href="/dashboard/category">
                   <li className="py-2 mx-4 hover:bg-gray-300 hover:text-gray-900">
-                    カテゴリー一覧
+                    カテゴリ一覧
                   </li>
                 </Link>
                 <Link href="/dashboard/category/new-category">
                   <li className="py-2 mx-4 hover:bg-gray-300 hover:text-gray-900">
-                    カテゴリー追加
+                    カテゴリ追加
                   </li>
                 </Link>
                 <li className="py-2 mt-3 border-b">画像</li>
