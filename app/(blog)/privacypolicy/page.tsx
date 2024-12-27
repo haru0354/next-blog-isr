@@ -13,60 +13,15 @@ const page = () => {
         </Link>
         」の利用に関する情報収集、利用、および開示に関する方針を説明します。
       </p>
-      <h3 className="font-bold text-lg my-6">1. 収集される情報</h3>
-      <ul className="border border-dashed border-gray-500 p-6 mb-6 mx-1 md:mx-16">
-        <li className="my-2">
-          <p className="font-bold">ニックネーム</p>
-          <p>
-            ユーザーがアプリに登録する際に入力する任意のニックネームが収集されます。
-          </p>
-        </li>
-        <li className="my-2">
-          <p className="font-bold">メールアドレス</p>
-          <p>
-            ユーザーがアプリに登録する際に入力するメールアドレスが収集されます。これにより、ユーザーアカウントの作成、ログイン機能などの機能が提供されます。
-          </p>
-        </li>
-        <li className="my-2">
-          <p className="font-bold">パスワード</p>
-          <p>
-            ユーザーがアプリに登録する際に入力するパスワードが収集されます。これにより、ユーザーアカウントの作成、ログイン機能などの機能が提供されます。
-          </p>
-        </li>
-        <li className="my-2">
-          <p className="font-bold">クッキー</p>
-          <p>
-            当サイトでは、クッキーを使用してユーザーのブラウザに情報を保存する場合があります。クッキーは、ウェブサイトの機能やパフォーマンスの向上、ユーザーの設定の記憶、トラフィックの解析などに使用されます。ユーザーはブラウザの設定でクッキーの使用を管理することができます。
-          </p>
-        </li>
-      </ul>
-      <p>
-        また、お問い合わせの際にはニックネーム・メールアドレスが収集されます。
-      </p>
-
-      <h3 className="font-bold text-lg my-6">2.収集された情報の利用</h3>
-
-      <p>収集された情報は、以下の目的で利用されます</p>
-      <ol className="border border-dashed border-gray-500 py-4 px-10 mb-6 mx-1 md:mx-16 list-decimal">
-        <li className="my-2">ユーザーアカウントの作成および管理。</li>
-        <li className="my-2">ユーザーに関連する通知や重要な情報の提供。</li>
-        <li className="my-2">
-          サービスの改善や新機能の開発に役立つ統計データの収集および分析。
-        </li>
-        <li className="my-2">
-          お問い合わせ頂いた内容への返答(但し、返答を約束するものではありません)
-        </li>
-      </ol>
-      <h3 className="font-bold text-lg my-6">3.アクセス解析ツールについて</h3>
+      <h3 className="font-bold text-lg my-6">1.アクセス解析ツールについて</h3>
       <p>
         Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。
       </p>
       <p>
         このGoogleアナリティクスはトラフィックデータの収集のためにクッキー（Cookie）を使用しております。トラフィックデータは匿名で収集されており、個人を特定するものではありません。
       </p>
-
       <p>
-        Googleアナリティクスに関する詳細情報は「{" "}
+        Googleアナリティクスに関する詳細情報は「
         <a
           href="https://marketingplatform.google.com/about/analytics/terms/jp/"
           target="_blank"
