@@ -91,7 +91,7 @@ const ListDraftTruePosts: React.FC<ListDraftTruePostsProps> = async ({
             </div>
           );
         })}
-        <Link href="/dashboard/private-post/">
+        <Link href="/dashboard/post/private-post/">
           <Button color="blue" size="normal" className="my-6">
             未公開記事に切り替え
           </Button>
