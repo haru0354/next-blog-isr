@@ -2,15 +2,41 @@ import Link from "next/link";
 import { getPosts } from "@/app/lib/service/blogServiceMany";
 import Button from "@/app/components/ui/Button";
 
-const ListPost = async () => {
-  const posts = await getPosts("category");
+type ListDraftFalsePostsProps = {
+  draftFalsePosts: Post[];
+};
 
-  const sortedPosts = posts.sort((a, b) => b.id - a.id);
+type Post = {
+  id: number;
+  createdDate: Date;
+  updatedDate: Date;
+  title: string;
+  content: string;
+  categoryId: number;
+  description: string;
+  slug: string;
+  postImageId: number | null;
+  draft: boolean;
+  category: {
+    id: number;
+    name: string;
+    slug: string;
+    title: string | null;
+    content: string | null;
+    description: string | null;
+    postImageId: number | null;
+    createdDate: Date;
+    updatedDate: Date;
+  };
+};
 
+const ListDraftFalsePosts: React.FC<ListDraftFalsePostsProps> = async ({
+  draftFalsePosts,
+}) => {
   return (
     <>
       <h2 className="bg-gray-700 text-xl bold text-white rounded mb-12 p-5 font-bold">
-        記事の一覧
+        未公開記事の一覧
       </h2>
       <div className="flex flex-col border border-gray-500 sm:flex-row py-4 items-center w-full sm:w-auto">
         <p className="sm:border-r border-gray-500  w-full px-2 mb-0 sm:w-auto min-w-[100px]">
@@ -24,7 +50,7 @@ const ListPost = async () => {
         </p>
       </div>
       <div className="mb-10">
-        {sortedPosts.map((post) => {
+        {draftFalsePosts.map((post) => {
           const formattedCreatedDate = new Date(
             post.createdDate
           ).toLocaleDateString();
@@ -66,9 +92,14 @@ const ListPost = async () => {
             </div>
           );
         })}
+        <Link href="/dashboard/post/" target="blank">
+          <Button color="blue" size="normal" className="my-6">
+            公開記事に切り替え
+          </Button>
+        </Link>
       </div>
     </>
   );
 };
 
-export default ListPost;
+export default ListDraftFalsePosts;
