@@ -48,7 +48,7 @@ const ListCategory = async () => {
                 </p>
               </div>
               <div className="flex sm:justify-end items-center my-4 sm:max-w-[240px]">
-                <Link href={`/${category.slug}`}>
+                <Link href={`/${category.slug}`} target="blank">
                   <Button color="blue" size="small">
                     ページ
                   </Button>

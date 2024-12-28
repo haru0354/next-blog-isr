@@ -1,9 +1,9 @@
-import ListPost from "@/app/components/blog/dashboard/list/ListPost";
+import ListDraftTruePosts from "@/app/components/blog/dashboard/list/ListDraftTruePosts";
 
-const page = async () => {
+const page = () => {
   return (
     <>
-      <ListPost />
+      <ListDraftTruePosts />
     </>
   );
 };
