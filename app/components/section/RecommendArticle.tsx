@@ -3,6 +3,7 @@ import Image from "next/image";
 import Section from "../section/Section";
 import AnimatedItem from "../animation/AnimatedItem";
 import Button from "../ui/Button";
+import NextLinkButton from "../ui/NextLinkButton";
 
 type RecommendArticleProps = {
   src: string;
@@ -39,11 +40,11 @@ const RecommendArticle: React.FC<RecommendArticleProps> = ({
               {content}
             </p>
           ))}
-          <Link href={url}>
-            <Button color="blue" size="normal">
+          <div className="flex justify-center">
+            <NextLinkButton href={url} color="blue" size="normal">
               記事はコチラ
-            </Button>
-          </Link>
+            </NextLinkButton>
+          </div>
         </div>
         <div className="w-full flex justify-center items-center py-4  max-w-[400px] ">
           <Image src={src} alt={alt} width={350} height={250} />
