@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Button from "@/app/components/ui/Button";
+import NextLinkButton from "@/app/components/ui/NextLinkButton";
+import LinkButton from "@/app/components/ui/LinkButton";
 
 type ListPostsProps = {
   draft: boolean;
@@ -83,27 +83,30 @@ const ListPosts: React.FC<ListPostsProps> = async ({
               </div>
               <div className="flex sm:justify-end items-center my-4 sm:max-w-[240px]">
                 {draft === true && (
-                  <Link
+                  <LinkButton
                     href={`/${post.category.slug}/${post.slug}`}
-                    target="blank"
+                    color="blue"
+                    size="small"
                   >
-                    <Button color="blue" size="small">
-                      ページ
-                    </Button>
-                  </Link>
+                    ページ
+                  </LinkButton>
                 )}
-                <Link href={`/dashboard/post/${post.id}`}>
-                  <Button color="gray" size="small">
-                    編集
-                  </Button>
-                </Link>
+                <NextLinkButton
+                  href={`/dashboard/post/${post.id}`}
+                  color="gray"
+                  size="small"
+                >
+                  編集
+                </NextLinkButton>
               </div>
             </div>
           );
         })}
-        <Button color="blue" size="normal" className="my-6">
-          <Link href={href}>{buttonTitle}</Link>
-        </Button>
+        <div className="flex justify-center items-center my-6">
+          <NextLinkButton href={href} color="blue" size="normal">
+            {buttonTitle}
+          </NextLinkButton>
+        </div>
       </div>
     </>
   );

@@ -21,7 +21,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({
   };
 
   const sizes = {
-    normal: "min-w-[180px] px-10 py-2 m-4",
+    normal: "min-w-[170px] px-10 py-2 m-4",
     small: "min-w-[100px] px-6 py-1 mx-2",
   };
 
