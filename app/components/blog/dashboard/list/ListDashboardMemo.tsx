@@ -1,9 +1,9 @@
 import React from "react";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
+
 import { getDashboardMemos } from "@/app/lib/service/blogServiceMany";
-import ButtonImage from "@/app/components/ui/ButtonImage";
+import NextLinkIconButton from "@/app/components/ui/NextLinkIconButton";
 
 const ListDashboardMemo = async () => {
   const dashboardMemos = await getDashboardMemos();
@@ -60,11 +60,9 @@ const ListDashboardMemo = async () => {
           </div>
           <div>
             <p className="text-red-500">メモする内容エリア</p>
-          
-              「ブログ 作り方 無料」・「ブログ 作り方」・「スマホ・ブログ
-              始め方」・「初心者 スマホ ブログ 作り方 」・「趣味・ブログ
-              始め方」・「無料 ブログ 始め方 」・「ブログ 初心者 おすすめ無料」
-            
+            「ブログ 作り方 無料」・「ブログ 作り方」・「スマホ・ブログ
+            始め方」・「初心者 スマホ ブログ 作り方 」・「趣味・ブログ
+            始め方」・「無料 ブログ 始め方 」・「ブログ 初心者 おすすめ無料」
           </div>
         </div>
       </>
@@ -79,16 +77,9 @@ const ListDashboardMemo = async () => {
       {sortedDashboardMemos.map((memo) => {
         return (
           <React.Fragment key={memo.id}>
-            <Link href={`/dashboard/${memo.id}`}>
-              <ButtonImage
-                className="rounded"
-                size="small"
-                icon="pen"
-                iconClassName="mr-2 w-[13px] h-[13px]"
-              >
-                編集
-              </ButtonImage>
-            </Link>
+            <NextLinkIconButton href={`/dashboard/${memo.id}`}>
+              編集
+            </NextLinkIconButton>
             <div className="bg-gray-200 shadow-md rounded px-8 py-8 mb-10 ">
               <div className="flex justify-between border-b-2 border-gray-300 mb-2">
                 <div>{memo.name}</div>
