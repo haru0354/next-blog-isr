@@ -1,9 +1,10 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
+
 import Form from "@/app/components/ui/Form";
 import Button from "@/app/components/ui/Button";
 
@@ -49,7 +50,12 @@ const AdminForm = () => {
             {errorMessage && (
               <p className="text-red-500 pt-4">{errorMessage}</p>
             )}
-            <Button color="blue" size="auth" className="rounded mt-4">
+            <Button
+              type="button"
+              color="blue"
+              size="auth"
+              className="rounded mt-4"
+            >
               ログイン
             </Button>
           </form>

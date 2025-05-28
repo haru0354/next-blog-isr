@@ -4,6 +4,7 @@ import { useState, ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useFormState } from "react-dom";
 import toast from "react-hot-toast";
+
 import Button from "@/app/components/ui/Button";
 import Form from "@/app/components/ui/Form";
 import TextArea from "@/app/components/ui/TextArea";
@@ -85,16 +86,16 @@ const FormDashboardMemo: React.FC<FormMemoProps> = ({
         <div className="w-full border py-4 px-6  border-gray-300 rounded bg-white max-w-full">
           <form action={dispatch} onSubmit={handleSubmit}>
             <Form
-              label={"メモの見出し"}
-              name={"name"}
+              label="メモの見出し"
+              name="name"
               placeholder="メモの見出しを記載しましょう。"
               value={inputValue}
               onChange={handleInputChange}
             />
             {errorMessage && <p className="text-red-500">{errorMessage}</p>}
             <TextArea
-              label={"メモする内容"}
-              name={"content"}
+              label="メモする内容"
+              name="content"
               placeholder="メモする内容を記載しましょう。"
               value={textAreaValue}
               onChange={handleTextareaChange}

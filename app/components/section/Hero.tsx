@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Button from "../ui/Button";
+import NextLinkButton from "../ui/NextLinkButton";
 
 type HeroProps = {
   title: string;
@@ -28,13 +29,20 @@ const Hero: React.FC<HeroProps> = ({ title, subTitle, contents, href }) => {
             「{subTitle}」
           </p>
           {contents.map((content, index) => (
-            <p className="mb-2" key={index}>{content}</p>
+            <p className="mb-2" key={index}>
+              {content}
+            </p>
           ))}
-          <Link href={href}>
-            <Button color="blue" size="normal">
+          <div className="flex justify-center items-center">
+            <NextLinkButton
+              href={href}
+              color="blue"
+              size="normal"
+              className="mb-1 rounded"
+            >
               詳細はコチラ
-            </Button>
-          </Link>
+            </NextLinkButton>
+          </div>
         </div>
       </div>
     </section>
