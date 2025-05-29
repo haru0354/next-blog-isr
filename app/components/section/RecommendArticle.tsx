@@ -1,8 +1,8 @@
-import Link from "next/link";
 import Image from "next/image";
+
 import Section from "../section/Section";
 import AnimatedItem from "../animation/AnimatedItem";
-import Button from "../ui/Button";
+import NextLinkButton from "../ui/NextLinkButton";
 
 type RecommendArticleProps = {
   src: string;
@@ -32,20 +32,20 @@ const RecommendArticle: React.FC<RecommendArticleProps> = ({
           imageRight ? "flex-row" : "flex-row-reverse"
         }`}
       >
-        <div className="w-full py-4 mx-14 max-w-[400px] justify-center items-center">
+        <div className="w-full py-4 mx-14 max-w-[400px] justify-center items-center order-2 md:order-none">
           <h3 className="text-gray-700 mb-6 text-2xl font-semibold ">{name}</h3>
           {contents.map((content, index) => (
             <p className="text-gray-700 mb-6" key={index}>
               {content}
             </p>
           ))}
-          <Link href={url}>
-            <Button color="blue" size="normal">
+          <div className="flex justify-center">
+            <NextLinkButton href={url} color="blue" size="normal">
               記事はコチラ
-            </Button>
-          </Link>
+            </NextLinkButton>
+          </div>
         </div>
-        <div className="w-full flex justify-center items-center py-4  max-w-[400px] ">
+        <div className="flex justify-center items-center w-full max-w-[400px] py-4 order-1 md:order-none">
           <Image src={src} alt={alt} width={350} height={250} />
         </div>
       </AnimatedItem>

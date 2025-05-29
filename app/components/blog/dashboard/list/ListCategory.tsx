@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { getCategories } from "@/app/lib/service/blogServiceMany";
-import Button from "@/app/components/ui/Button";
+import NextLinkButton from "@/app/components/ui/NextLinkButton";
+import LinkButton from "@/app/components/ui/LinkButton";
 
 const ListCategory = async () => {
   const categories = await getCategories();
@@ -48,16 +48,20 @@ const ListCategory = async () => {
                 </p>
               </div>
               <div className="flex sm:justify-end items-center my-4 sm:max-w-[240px]">
-                <Link href={`/${category.slug}`} target="blank">
-                  <Button color="blue" size="small">
-                    ページ
-                  </Button>
-                </Link>
-                <Link href={`/dashboard/category/${category.id}`}>
-                  <Button color="gray" size="small">
-                    編集
-                  </Button>
-                </Link>
+                <LinkButton
+                  href={`/${category.slug}`}
+                  color="blue"
+                  size="small"
+                >
+                  ページ
+                </LinkButton>
+                <NextLinkButton
+                  href={`/dashboard/category/${category.id}`}
+                  color="gray"
+                  size="small"
+                >
+                  編集
+                </NextLinkButton>
               </div>
             </div>
           );

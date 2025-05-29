@@ -4,11 +4,12 @@ import { useFormStatus } from "react-dom";
 
 type ButtonProps = {
   children: React.ReactNode;
+  color: "blue" | "gray" | "red" | "white";
+  size: "normal" | "small" | "auth";
   formAction?: (data: FormData) => Promise<{ message: string } | undefined>;
   onClick?: () => void;
   className?: string;
-  color: "blue" | "gray" | "red" | "white";
-  size: "normal" | "small" | "auth";
+  type?: "submit" | "button";
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -18,6 +19,7 @@ const Button: React.FC<ButtonProps> = ({
   className,
   color,
   size,
+  type = "submit",
 }) => {
   const { pending } = useFormStatus();
 
@@ -31,7 +33,7 @@ const Button: React.FC<ButtonProps> = ({
   const sizes = {
     normal: "min-w-[170px] px-10 py-2 block mx-auto",
     small: "min-w-[100px] px-6 py-1 mx-2",
-    auth: "min-w-[250px] px-10 py-2 block mx-auto"
+    auth: "min-w-[250px] px-10 py-2 block mx-auto",
   };
 
   return (
@@ -41,7 +43,7 @@ const Button: React.FC<ButtonProps> = ({
       ${colors[color]} 
       ${sizes[size]} 
       ${pending ? "opacity-30" : ""}`}
-      type="submit"
+      type={type}
       formAction={formAction}
       disabled={pending}
       onClick={onClick}

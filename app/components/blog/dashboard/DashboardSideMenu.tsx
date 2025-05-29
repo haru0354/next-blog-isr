@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
+import { signOut } from "next-auth/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faList,
@@ -10,8 +12,7 @@ import {
   faBars,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import { signOut } from "next-auth/react";
+
 import Button from "../../ui/Button";
 
 const DashboardSideMenu = () => {
@@ -125,6 +126,7 @@ const DashboardSideMenu = () => {
           </div>
           <Button
             onClick={handleLogout}
+            type="button"
             color="white"
             size="normal"
             className="rounded mt-4"
@@ -138,6 +140,7 @@ const DashboardSideMenu = () => {
         <button
           className="block sm:hidden text-white p-2 w-12 h-12 border rounded bg-gray-700 border-gray-800 fixed"
           onClick={toggleMenu}
+          type="button"
         >
           <FontAwesomeIcon
             icon={faBars}
@@ -149,6 +152,7 @@ const DashboardSideMenu = () => {
             <button
               className="block sm:hidden text-white p-2 w-12 h-12 border rounded bg-gray-700 border-gray-800 fixed z-10"
               onClick={toggleMenu}
+              type="button"
             >
               <FontAwesomeIcon
                 icon={faXmark}
@@ -204,6 +208,7 @@ const DashboardSideMenu = () => {
               </ul>
               <Button
                 onClick={handleLogout}
+                type="button"
                 color="white"
                 size="normal"
                 className="rounded mt-4"

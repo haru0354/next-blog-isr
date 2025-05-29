@@ -17,8 +17,12 @@ export default function Home() {
             src="/no_image.jpg"
             alt="aa"
             url="/"
-            name="aa"
-            contents={["bb", "cc", "dd"]}
+            name="任意の記事へのリンク"
+            contents={[
+              "これはtest記事です。",
+              "任意の紹介文の記載をすることができます。",
+              "この記事については下記で詳しく解説しています。",
+            ]}
           />
           <TopNewArticles />
           <TopCategories />
@@ -27,16 +31,20 @@ export default function Home() {
             name1="●●の基礎知識"
             name2="●●の悩みの解決"
             name3="●●な疑問"
-            content1="テスト"
-            content2="テスト2"
-            content3="テスト3"
+            content1="ここでは任意の項目を表示できるエリアです。"
+            content2="TOPページで使用するのを想定しています。"
+            content3="単なるカテゴリと記事表示だけではない、TOPページの作成ができます。"
           />
           <RecommendArticle
             src="/no_image.jpg"
             alt="aa"
             url="/"
-            name="aa"
-            contents={["bb", "cc", "dd"]}
+            name="任意の記事へのリンク"
+            contents={[
+              "これはtest記事です。",
+              "任意の紹介文の記載をすることができます。",
+              "この記事については下記で詳しく解説しています。",
+            ]}
             imageRight={false}
           />
         </div>

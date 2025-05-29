@@ -54,6 +54,7 @@ const ButtonImage: React.FC<ButtonImageProps> = ({
        ${className}  ${sizes[size]} ${pending ? "opacity-30" : ""}`}
       disabled={pending}
       onClick={onClick}
+      type="button"
     >
       <FontAwesomeIcon
         icon={selectedIcon}

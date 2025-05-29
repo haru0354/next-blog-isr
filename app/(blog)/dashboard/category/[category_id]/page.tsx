@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+
 import { getCategory } from "@/app/lib/service/blogServiceUnique";
 import { updateCategory, deleteCategory } from "@/app/action/actionCategory";
 import FormCategory from "@/app/components/blog/dashboard/form/FormCategory";
-import Button from "@/app/components/ui/Button";
 import DeleteModal from "@/app/components/ui/DeleteModal";
-
+import NextLinkButton from "@/app/components/ui/NextLinkButton";
 
 export const metadata: Metadata = {
   title: "カテゴリの編集",
@@ -27,11 +26,16 @@ const page = async ({ params }: { params: { category_id: string } }) => {
         category={category}
         buttonName={"編集内容を保存"}
       />
-      <Link href="/dashboard/category/">
-        <Button color="gray" size="normal" className="rounded mt-4">
+      <div className="flex justify-center items-center">
+        <NextLinkButton
+          href="/dashboard/category"
+          color="gray"
+          size="normal"
+          className="min-w-[194px] mb-1 rounded"
+        >
           キャンセル
-        </Button>
-      </Link>
+        </NextLinkButton>
+      </div>
       <DeleteModal
         DeleteName="カテゴリ"
         name={category?.name}

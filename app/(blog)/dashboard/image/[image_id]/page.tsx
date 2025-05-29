@@ -1,17 +1,13 @@
-import Link from "next/link";
 import { getPostImage } from "@/app/lib/service/blogServiceUnique";
-import {
-  deletePostImage,
-  updatePostImage,
-} from "@/app/action/actionPostImage";
+import { deletePostImage, updatePostImage } from "@/app/action/actionPostImage";
 import FormPostImage from "@/app/components/blog/dashboard/form/FormPostImage";
-import Button from "@/app/components/ui/Button";
 import DeleteModal from "@/app/components/ui/DeleteModal";
+import NextLinkButton from "@/app/components/ui/NextLinkButton";
 
 const page = async ({ params }: { params: { image_id: string } }) => {
   const id = Number(params.image_id);
   const updatePostImageWidthId = updatePostImage.bind(null, id);
-  const postImage = await getPostImage(params.image_id)
+  const postImage = await getPostImage(params.image_id);
 
   return (
     <>
@@ -23,11 +19,16 @@ const page = async ({ params }: { params: { image_id: string } }) => {
         postImage={postImage}
         buttonName="編集内容を保存"
       />
-      <Link href="/dashboard/image/">
-        <Button color="gray" size="normal" className="rounded mt-4">
+      <div className="flex justify-center items-center">
+        <NextLinkButton
+          href="/dashboard/image"
+          color="gray"
+          size="normal"
+          className="mb-1 rounded"
+        >
           キャンセル
-        </Button>
-      </Link>
+        </NextLinkButton>
+      </div>
       <DeleteModal
         DeleteName="画像"
         name={postImage?.name}

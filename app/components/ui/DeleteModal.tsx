@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Button from "../ui/Button";
 import Image from "next/image";
 import toast from "react-hot-toast";
+
+import Button from "../ui/Button";
 
 type DeleteModalProps = {
   DeleteName: string;
@@ -77,6 +78,7 @@ const DeleteModal: React.FC<DeleteModalProps> = ({
                 color="gray"
                 size="normal"
                 className="rounded mt-4"
+                type="button"
               >
                 キャンセル
               </Button>
@@ -92,6 +94,7 @@ const DeleteModal: React.FC<DeleteModalProps> = ({
                 {userId && <input type="hidden" name="userId" value={userId} />}
                 <Button
                   formAction={formAction}
+                  type="button"
                   color="red"
                   size="normal"
                   className="rounded mt-4"
