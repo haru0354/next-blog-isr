@@ -17,6 +17,7 @@ URL：https://www.travel-memory-life.com/
 
 ## 使用している主な技術
 
+- TypeScript
 - Next.js 14
 - node.js
 - Tailwind CSS
