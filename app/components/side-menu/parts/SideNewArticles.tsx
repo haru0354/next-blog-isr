@@ -1,22 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
+
 import { getPosts } from "@/app/lib/service/blogServiceMany";
+import SideMenuContainer from "./SideMenuContainer";
 
 const SideNewArticles = async () => {
-  const posts = await getPosts("categoryAndPostImage", 5,)
+  const posts = await getPosts("categoryAndPostImage", 5);
+
+  if (!posts) {
+    return null;
+  }
 
   return (
-    <div className="w-full p-2">
-      <h3 className="bg-blue-400 text-white font-bold text-lg px-2 py-4 rounded-sm">
-        新着記事
-      </h3>
+    <SideMenuContainer title="新着記事">
       <ul>
         {posts.map((post) => {
           return (
             post.draft && (
               <li
                 key={post.id}
-                className="my-6 p-3 border-b border-gray-600 border-dashed hover:bg-gray-200"
+                className="my-6 p-3 border-b border-blog-borderBlack border-dashed hover:bg-blog-hoverBlue transition duration-300"
               >
                 <Link href={`/${post.category.slug}/${post.slug}`}>
                   {post.postImage &&
@@ -36,11 +39,9 @@ const SideNewArticles = async () => {
                       />
                     )}
                   {post.title && post.title.length > 36 ? (
-                    <p className="text-gray-600 my-2">
-                      {post.title.slice(0, 36)}...
-                    </p>
+                    <p className="my-2">{post.title.slice(0, 36)}...</p>
                   ) : (
-                    <p className="text-gray-600 my-2">{post.title}</p>
+                    <p className="my-2">{post.title}</p>
                   )}
                 </Link>
               </li>
@@ -48,7 +49,7 @@ const SideNewArticles = async () => {
           );
         })}
       </ul>
-    </div>
+    </SideMenuContainer>
   );
 };
 

@@ -1,14 +1,17 @@
 import Link from "next/link";
+
 import { getCategories } from "@/app/lib/service/blogServiceMany";
+import SideMenuContainer from "./SideMenuContainer";
 
 const SideCategoryMenu = async () => {
   const categories = await getCategories("posts");
 
+  if (!categories) {
+    return null;
+  }
+
   return (
-    <div className="w-full p-2">
-      <h3 className="bg-blue-400 text-white font-bold text-lg px-2 py-4 rounded-sm">
-        カテゴリー
-      </h3>
+    <SideMenuContainer title="カテゴリ">
       {categories.map((category) => {
         if (
           !category ||
@@ -17,17 +20,18 @@ const SideCategoryMenu = async () => {
         ) {
           return null;
         }
+        
         return (
           <ul key={category.id}>
-            <li className="py-4 hover:bg-gray-200">
+            <li className="py-4 hover:bg-blog-hoverBlue transition duration-300">
               <Link href={`/${category.slug}`}>
-                <p className="text-gray-600 mb-1 px-3">{category.name}</p>
+                <p className="mb-1 px-3">{category.name}</p>
               </Link>
             </li>
           </ul>
         );
       })}
-    </div>
+    </SideMenuContainer>
   );
 };
 
