@@ -2,16 +2,16 @@ import Image from "next/image";
 
 const HeaderImage = () => {
   return (
-    <section className="bg-sky-100 w-full">
+    <div className="bg-sky-100 w-full">
       <Image
         src="/header-image.png"
-        alt="サイトイメージ画像"
+        alt="英語は話せなくても旅行はできる"
         width={1150}
         height={600}
         className="mx-auto"
         priority
       />
-    </section>
+    </div>
   );
 };
 

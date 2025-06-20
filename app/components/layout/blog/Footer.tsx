@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Footer = () => {
-  const webSiteTitle = process.env.NEXT_PUBLIC_WEBSITE_TITLE;
+import { siteTitle } from "@/app/config/blogConfig";
 
+const Footer = () => {
   return (
     <>
-      <div className="bg-blue-50 ">
+      <div className="bg-blog-bgColor">
         <Image
-          alt="footerイメージ"
+          alt="飛行機で旅行の画像"
           src="/footer-image.png"
           width={1000}
           height={370}
@@ -29,7 +29,9 @@ const Footer = () => {
               <Link href="/sitemaps">サイトマップ</Link>
             </li>
           </ul>
-          <span className="text-xs text-black">&copy;{webSiteTitle}</span>
+          <span className="text-xs text-black">
+            &copy; {siteTitle}
+          </span>
         </div>
       </footer>
     </>

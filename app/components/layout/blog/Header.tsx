@@ -1,22 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { siteTitle } from "@/app/config/blogConfig";
+
 type HeaderProps = {
   isTopPage?: boolean;
 };
 
 const Header: React.FC<HeaderProps> = ({ isTopPage }) => {
-  const webSiteTitle = process.env.NEXT_PUBLIC_WEBSITE_TITLE;
-
   return (
     <header>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center bg-blog-bgColor">
         <Link href="/">
           {isTopPage ? (
             <h1>
               <Image
                 src="/logo_blog.png"
-                alt={webSiteTitle || "サイトタイトル"}
+                alt={siteTitle || "サイトタイトルが未設定"}
                 width={350}
                 height={90}
                 priority
@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ isTopPage }) => {
           ) : (
             <Image
               src="/logo_blog.png"
-              alt={webSiteTitle || "サイトタイトル"}
+              alt={siteTitle || "サイトタイトルが未設定"}
               width={350}
               height={90}
               priority

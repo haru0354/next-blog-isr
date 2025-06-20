@@ -1,10 +1,10 @@
-import Header from "./components/section/Header";
+import Header from "./components/layout/blog/Header";
 import TopCategories from "./components/section/TopCategories";
 import TopNewArticles from "./components/section/TopNewArticles";
-import HeaderImage from "./components/section/HeaderImage";
+import HeaderImage from "./components/layout/blog/HeaderImage";
 import RecommendArticle from "./components/section/RecommendArticle";
 import ThreeColumnIcon from "./components/section/ThreeColumnIcon";
-import Footer from "./components/section/Footer";
+import Footer from "./components/layout/blog/Footer";
 
 export default function Home() {
   return (
