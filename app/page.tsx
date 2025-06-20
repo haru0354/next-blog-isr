@@ -1,6 +1,6 @@
 import Header from "./components/layout/blog/Header";
-import TopCategories from "./components/section/TopCategories";
-import TopNewArticles from "./components/section/TopNewArticles";
+import CategoryList from "./components/section/CategoryList";
+import NewArticleList from "./components/section/NewArticleList";
 import HeaderImage from "./components/layout/blog/HeaderImage";
 import RecommendArticle from "./components/section/RecommendArticle";
 import ThreeColumnIcon from "./components/section/ThreeColumnIcon";
@@ -24,8 +24,8 @@ export default function Home() {
               "この記事については下記で詳しく解説しています。",
             ]}
           />
-          <TopNewArticles />
-          <TopCategories />
+          <NewArticleList />
+          <CategoryList />
           <ThreeColumnIcon
             title="このブログで分かること"
             name1="●●の基礎知識"
