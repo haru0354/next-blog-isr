@@ -1,9 +1,9 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 
 import { getDashboardMemos } from "@/app/lib/service/blogServiceMany";
-import NextLinkIconButton from "@/app/components/ui/button/NextLinkIconButton";
+import HeadingTwo from "../../ui/dashboard/HeadingTwo";
+import NextLinkIconButton from "../../ui/button/NextLinkIconButton";
 
 const ListDashboardMemo = async () => {
   const dashboardMemos = await getDashboardMemos();
@@ -13,9 +13,7 @@ const ListDashboardMemo = async () => {
   if (sortedDashboardMemos.length === 0) {
     return (
       <>
-        <h2 className="bg-gray-700 text-xl bold text-white rounded mb-12 p-5 font-bold">
-          メモの使い方
-        </h2>
+        <HeadingTwo>メモの使い方</HeadingTwo>
         <p>ここではサイト制作時のメモが簡単に追加できます。</p>
         <ul className="my-6 px-4 border p-4">
           <li className="flex py-3 px-2 text-red-500  ">
@@ -51,8 +49,8 @@ const ListDashboardMemo = async () => {
         </p>
         <p className="pb-6"></p>
         例）
-        <div className="bg-gray-100 shadow-md rounded px-8 py-8 mb-10 border border-gray-200">
-          <div className="flex justify-between border-b border-gray-500 mb-2">
+        <div className="px-8 py-8 mb-10 border shadow-md rounded border-blog-borderGray bg-gray-100">
+          <div className="flex justify-between mb-2 border-b border-blog-borderBlack">
             <div>
               <p className="text-red-500">メモの見出しエリア</p>
               今後作成していく記事のメインキーワード
@@ -71,22 +69,28 @@ const ListDashboardMemo = async () => {
 
   return (
     <>
-      <h2 className="bg-gray-700 text-xl bold text-white rounded mb-12 p-5 font-bold">
-        メモの一覧
-      </h2>
+      <HeadingTwo>サイト制作のメモ一覧</HeadingTwo>
       {sortedDashboardMemos.map((memo) => {
         return (
-          <React.Fragment key={memo.id}>
-            <NextLinkIconButton href={`/dashboard/${memo.id}`}>
-              編集
-            </NextLinkIconButton>
-            <div className="bg-gray-200 shadow-md rounded px-8 py-8 mb-10 ">
-              <div className="flex justify-between border-b-2 border-gray-300 mb-2">
+          <div key={memo.id}>
+            <div className="text-right">
+              <NextLinkIconButton
+                href={`/dashboard/${memo.id}`}
+                className="rounded"
+                size="small"
+                icon="pen"
+                iconClassName="w-[13px] h-[13px] mr-2"
+              >
+                編集
+              </NextLinkIconButton>
+            </div>
+            <div className="px-8 py-8 mb-10 bg-gray-200 shadow-md rounded">
+              <div className="flex justify-between mb-2 border-b-2 border-blog-borderGray">
                 <div>{memo.name}</div>
               </div>
               <div>{memo.content}</div>
             </div>
-          </React.Fragment>
+          </div>
         );
       })}
     </>
