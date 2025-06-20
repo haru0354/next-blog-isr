@@ -1,35 +1,38 @@
 type DateProps = {
   name: string;
-  value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  label: string;
+  register: any;
   defaultValue?: string;
-  label?: string;
+  required?: boolean;
+  error?: string | string[];
 };
 
 const Date: React.FC<DateProps> = ({
   name,
-  value,
-  onChange,
+  label,
+  register,
   defaultValue,
-  label = "日付:",
+  required,
+  error,
 }) => {
+  const borderColor = error ? " border-red-500" : "border-gray-300";
+
   return (
     <div>
-      <label
-        className="block text-gray-600 text-sm font-bold  mb-1 mt-4"
-        htmlFor={label}
-      >
+      <label className="block mb-1 mt-4 text-sm font-bold" htmlFor={label}>
         {label}
       </label>
       <input
         type="date"
         id={label}
         name={name}
-        value={value}
         defaultValue={defaultValue}
-        onChange={onChange}
-        className="shadow border rounded py-2 px-2"
+        {...register(name, {
+          required: required && `${label}の入力は必須です。`,
+        })}
+        className={`py-1 px-2 shadow border rounded ${borderColor}`}
       />
+      {error && <p className="text-red-500 text-sm my-2">{error}</p>}
     </div>
   );
 };

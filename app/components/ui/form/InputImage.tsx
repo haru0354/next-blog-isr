@@ -1,143 +1,41 @@
-"use client";
+import { ChangeEventHandler } from "react";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-
-import Input from "./Input";
-
-type FormImageProps = {
-  state?: State;
-  selectImage?: PostImage | null;
-  altTextValue?: string;
-  formSubmitted?: boolean;
-  onChangeAltText?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+type InputImageProps = {
+  name: string;
   label: string;
-  placeholder: string;
+  error?: string | string[];
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  register: any;
+  required?: boolean;
 };
 
-type State = {
-  message?: string | null;
-  errors?: {
-    image?: string[] | undefined;
-    altText?: string[] | undefined;
-  };
-};
-
-type PostImage = {
-  url?: string | null;
-  altText?: string | null;
-};
-
-const InputImage: React.FC<FormImageProps> = ({
-  state,
-  selectImage,
-  altTextValue,
-  formSubmitted,
-  onChangeAltText,
+const InputImage: React.FC<InputImageProps> = ({
+  name,
   label,
-  placeholder,
+  error,
+  onChange,
+  register,
+  required,
 }) => {
-  const [error, setError] = useState<string>("");
-  const [image, setImage] = useState<{ preview: string; data: File | string }>({
-    preview: "",
-    data: "",
-  });
-  const [fileInputKey, setFileInputKey] = useState(Date.now());
-
-  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const imageTypes = ["image/jpeg", "image/png", "image/gif"];
-    const selectedFile = e.target.files ? e.target.files[0] : null;
-    const maxSizeInBytes = 1024 * 1024;
-
-    if (selectedFile) {
-      if (!imageTypes.includes(selectedFile.type)) {
-        setError("JPEG、PNG、GIF形式の画像ファイルを選択してください");
-        e.target.value = "";
-        return;
-      }
-
-      if (selectedFile.size > maxSizeInBytes) {
-        setError("画像サイズが大きすぎます。アップロードできる画像は1MBです。");
-        e.target.value = "";
-        return;
-      }
-
-      const img = {
-        preview: URL.createObjectURL(selectedFile),
-        data: selectedFile,
-      };
-      setImage(img);
-      setError("");
-    } else {
-      console.error("ファイルが選択されていません");
-      return;
-    }
-  };
-
-  useEffect(() => {
-    setImage({ preview: "", data: "" });
-    setFileInputKey(Date.now());
-  }, [formSubmitted]);
+  const errorFiledColor = error ? "border rounded border-red-500" : "";
 
   return (
-    <>
-      <div className="flex mx-auto">
-        {image.preview && (
-          <>
-            <div className="mr-10 w-full">
-              <p className="text-lg font-bold border-b pb-2 mb-6 bold text-gray-900">
-                保存する画像
-              </p>
-              <Image
-                src={image.preview}
-                alt="保存する画像"
-                width="300"
-                height="300"
-                className="pb-2 mb-6"
-              />
-            </div>
-          </>
-        )}
-        {selectImage && selectImage.url && selectImage.altText && (
-          <div className="w-full">
-            <p className="text-lg font-bold border-b pb-2 mb-6 bold text-gray-900">
-              選択してる画像
-            </p>
-            <Image
-              src={selectImage.url}
-              alt={selectImage.altText}
-              width={300}
-              height={180}
-              style={{
-                width: "280px",
-                height: "auto",
-              }}
-            />
-          </div>
-        )}
-      </div>
-      <Input
-        name="image"
-        label="画像を選択"
+    <div>
+      <label className="block mb-1 mt-4 text-sm font-bold" htmlFor={label}>
+        {label}
+      </label>
+      <input
         type="file"
-        onChange={handleFileChange}
-        key={fileInputKey}
+        id={label}
+        name={name}
+        onChange={onChange}
+        className={`w-full py-2 px-3 ${errorFiledColor}`}
+        {...register(name, {
+          required: required && `${label}の選択は必須です。`,
+        })}
       />
-      {error && <p className="text-red-500">{error}</p>}
-      {state?.errors && state.errors.image && (
-        <p className="text-red-500">{state.errors.image}</p>
-      )}
-      <Input
-        label={label}
-        name="altText"
-        value={altTextValue}
-        placeholder={placeholder}
-        onChange={onChangeAltText}
-      />
-      {state?.errors && state.errors.altText && (
-        <p className="text-red-500">{state.errors.altText}</p>
-      )}
-    </>
+      {error && <p className="text-red-500 text-sm my-2">{error}</p>}
+    </div>
   );
 };
 
