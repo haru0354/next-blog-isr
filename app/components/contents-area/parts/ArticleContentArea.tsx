@@ -5,7 +5,7 @@ import parse from "html-react-parser";
 import DOMPurify from "dompurify";
 import { addGenerateContentId } from "@/app/lib/generateToc";
 import TableOfContents from "./TableOfContents";
-import CustomComponents from "../../blog/design-components/CustomComponents";
+import CustomComponents from "../../design-components/CustomComponents";
 
 type ArticleContentAreaProps = {
   content: string;
