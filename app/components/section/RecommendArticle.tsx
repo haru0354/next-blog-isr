@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import Section from "../section/Section";
 import AnimatedItem from "../animation/AnimatedItem";
-import NextLinkButton from "../ui/NextLinkButton";
+import NextLinkButton from "../ui/button/NextLinkButton";
 
 type RecommendArticleProps = {
   src: string;

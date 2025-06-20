@@ -3,9 +3,10 @@
 import { useFormState } from "react-dom";
 
 import Form from "@/app/components/ui/Form";
-import Button from "@/app/components/ui/Button";
+
 import TextArea from "@/app/components/ui/TextArea";
 import FormImage from "@/app/components/ui/FormImage";
+import Button from "@/app/components/ui/button/Button";
 
 type FormCategoryProps = {
   category?: (Category & { postImage: PostImage | null }) | null;

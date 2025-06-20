@@ -3,7 +3,7 @@ import { getCategories } from "@/app/lib/service/blogServiceMany";
 import { deletePost, updatePost } from "@/app/action/actionPost";
 import FormPost from "@/app/components/blog/dashboard/form/FormPost";
 import DeleteModal from "@/app/components/ui/DeleteModal";
-import NextLinkButton from "@/app/components/ui/NextLinkButton";
+import NextLinkButton from "@/app/components/ui/button/NextLinkButton";
 
 const page = async ({ params }: { params: { post_id: string } }) => {
   const id = Number(params.post_id);

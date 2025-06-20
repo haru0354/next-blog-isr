@@ -12,8 +12,9 @@ import {
   faBars,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import Button from "../../ui/button/Button";
 
-import Button from "../../ui/Button";
+
 
 const DashboardSideMenu = () => {
   const [isOpen, setIsOpen] = useState(false);

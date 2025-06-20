@@ -1,5 +1,5 @@
-import NextLinkButton from "@/app/components/ui/NextLinkButton";
-import LinkButton from "@/app/components/ui/LinkButton";
+import LinkButton from "@/app/components/ui/button/LinkButton";
+import NextLinkButton from "@/app/components/ui/button/NextLinkButton";
 
 type ListPostsProps = {
   draft: boolean;

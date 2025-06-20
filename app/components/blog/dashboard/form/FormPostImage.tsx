@@ -2,8 +2,9 @@
 
 import { useFormState } from "react-dom";
 
-import Button from "@/app/components/ui/Button";
+
 import FormImage from "@/app/components/ui/FormImage";
+import Button from "@/app/components/ui/button/Button";
 
 type FormPostImageProps = {
   postImage?: PostImage | null;
