@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
-import { supabase } from "../components/util/supabase";
+import { supabase } from "../util/supabase";
 import { fileSaveUtils } from "../lib/fileSaveUtils";
 import { validateFile } from "../lib/validateFile";
 import { revalidatePostsAndCategories } from "../lib/revalidatePostsAndCategories";

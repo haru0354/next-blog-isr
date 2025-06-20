@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { supabase } from "../components/util/supabase";
+import { supabase } from "../util/supabase";
 import { z } from "zod";
 import { promises as fsPromises } from "fs";
 import { fileSaveUtils } from "../lib/fileSaveUtils";
