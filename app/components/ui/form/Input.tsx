@@ -9,7 +9,7 @@ type FormProps = {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Form: React.FC<FormProps> = ({ name, label, placeholder, value, onChange, defaultValue, type = "text", }) => {
+const Input: React.FC<FormProps> = ({ name, label, placeholder, value, onChange, defaultValue, type = "text", }) => {
     return (
         <div>
       <label
@@ -33,4 +33,4 @@ const Form: React.FC<FormProps> = ({ name, label, placeholder, value, onChange, 
   );
 };
 
-export default Form;
+export default Input;

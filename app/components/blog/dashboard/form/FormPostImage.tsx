@@ -2,9 +2,8 @@
 
 import { useFormState } from "react-dom";
 
-
-import FormImage from "@/app/components/ui/FormImage";
 import Button from "@/app/components/ui/button/Button";
+import InputImage from "@/app/components/ui/form/InputImage";
 
 type FormPostImageProps = {
   postImage?: PostImage | null;
@@ -50,7 +49,7 @@ const FormPostImage: React.FC<FormPostImageProps> = ({
       <div className="flex items-center justify-center">
         <div className="w-full border py-4 px-6  border-gray-300 rounded bg-white max-w-full">
           <form onSubmit={handleSubmit}>
-            <FormImage
+            <InputImage
               selectImage={postImage}
               state={state}
               label="画像の名前(alt)"

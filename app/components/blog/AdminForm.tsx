@@ -5,8 +5,9 @@ import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
 
-import Form from "@/app/components/ui/Form";
+
 import Button from "../ui/button/Button";
+import Input from "../ui/form/Input";
 
 
 const AdminForm = () => {
@@ -41,8 +42,8 @@ const AdminForm = () => {
         </h2>
         <div className="flex">
           <form onSubmit={handleLogin} className="w-full">
-            <Form label="ユーザー名" name="username" placeholder="ユーザー名" />
-            <Form
+            <Input label="ユーザー名" name="username" placeholder="ユーザー名" />
+            <Input
               label="パスワード"
               name="password"
               placeholder="パスワード"

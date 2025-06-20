@@ -4,13 +4,12 @@ import { useState } from "react";
 import { useFormState } from "react-dom";
 import DOMPurify from "dompurify";
 
-import TextArea from "@/app/components/ui/TextArea";
-import Form from "@/app/components/ui/Form";
-
-import Select from "@/app/components/ui/Select";
-import FormImage from "@/app/components/ui/FormImage";
-import Checkbox from "@/app/components/ui/Checkbox";
+import TextArea from "@/app/components/ui/form/TextArea";
+import Checkbox from "@/app/components/ui/form/Checkbox";
 import Button from "@/app/components/ui/button/Button";
+import Input from "@/app/components/ui/form/Input";
+import InputImage from "@/app/components/ui/form/InputImage";
+import Select from "@/app/components/ui/form/Select";
 
 type FormPostProps = {
   post?: (Post & { category: Category; postImage: PostImage | null }) | null;
@@ -107,7 +106,7 @@ const FormPost: React.FC<FormPostProps> = ({
       <div className="flex items-center justify-center">
         <div className="w-full border py-4 px-6  border-gray-300 rounded bg-white max-w-full">
           <form onSubmit={handleSubmit}>
-            <Form
+            <Input
               name="title"
               label="記事のタイトル"
               defaultValue={post?.title}
@@ -122,7 +121,7 @@ const FormPost: React.FC<FormPostProps> = ({
               categories={categories}
               defaultValue={category?.id}
             />
-            <Form
+            <Input
               name="slug"
               label="スラッグ"
               defaultValue={post?.slug}
@@ -149,7 +148,7 @@ const FormPost: React.FC<FormPostProps> = ({
             {state.errors && state.errors.description && (
               <p className="text-red-500">{state.errors.description}</p>
             )}
-            <FormImage
+            <InputImage
               selectImage={post?.postImage}
               state={state}
               label="画像の名前(alt)"

@@ -2,11 +2,10 @@
 
 import { useFormState } from "react-dom";
 
-import Form from "@/app/components/ui/Form";
-
-import TextArea from "@/app/components/ui/TextArea";
-import FormImage from "@/app/components/ui/FormImage";
 import Button from "@/app/components/ui/button/Button";
+import Input from "@/app/components/ui/form/Input";
+import InputImage from "@/app/components/ui/form/InputImage";
+import TextArea from "@/app/components/ui/form/TextArea";
 
 type FormCategoryProps = {
   category?: (Category & { postImage: PostImage | null }) | null;
@@ -65,7 +64,7 @@ const FormCategory: React.FC<FormCategoryProps> = ({
         <div className="w-full border py-4 px-6  border-gray-300 rounded bg-white max-w-full">
           <form onSubmit={handleSubmit}>
             {state.message && <p className="text-red-500">{state.message}</p>}
-            <Form
+            <Input
               name="name"
               label="カテゴリ名"
               placeholder="カテゴリ名を入力してください。"
@@ -74,7 +73,7 @@ const FormCategory: React.FC<FormCategoryProps> = ({
             {state.errors && (
               <p className="text-red-500">{state.errors.name}</p>
             )}
-            <Form
+            <Input
               name="slug"
               label="スラッグ"
               placeholder="カテゴリのスラッグを半角小文字の英数字で入力してください。"
@@ -104,7 +103,7 @@ const FormCategory: React.FC<FormCategoryProps> = ({
               placeholder="カテゴリの内容を入力してください。カテゴリページに表示がされます。この項目は必須ではありません。"
               defaultValue={category?.content || undefined}
             />
-            <FormImage
+            <InputImage
               selectImage={category?.postImage}
               state={state}
               label="画像の名前(alt)"
