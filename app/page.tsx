@@ -1,10 +1,10 @@
-import Header from "./components/section/Header";
-import TopCategories from "./components/section/TopCategories";
-import TopNewArticles from "./components/section/TopNewArticles";
-import HeaderImage from "./components/section/HeaderImage";
+import Header from "./components/layout/blog/Header";
+import CategoryList from "./components/section/CategoryList";
+import NewArticleList from "./components/section/NewArticleList";
+import HeaderImage from "./components/layout/blog/HeaderImage";
 import RecommendArticle from "./components/section/RecommendArticle";
 import ThreeColumnIcon from "./components/section/ThreeColumnIcon";
-import Footer from "./components/section/Footer";
+import Footer from "./components/layout/blog/Footer";
 
 export default function Home() {
   return (
@@ -24,8 +24,8 @@ export default function Home() {
               "この記事については下記で詳しく解説しています。",
             ]}
           />
-          <TopNewArticles />
-          <TopCategories />
+          <NewArticleList />
+          <CategoryList />
           <ThreeColumnIcon
             title="このブログで分かること"
             name1="●●の基礎知識"

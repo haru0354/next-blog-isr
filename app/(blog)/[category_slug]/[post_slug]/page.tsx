@@ -1,7 +1,7 @@
 import { getCategory, getPost } from "@/app/lib/service/blogServiceUnique";
 import { getPosts } from "@/app/lib/service/blogServiceMany";
-import LeftColumn from "@/app/components/blog/contents-area/LeftColumn";
-import SideMenu from "@/app/components/blog/side-menu/SideMenu";
+import LeftColumn from "@/app/components/contents-area/LeftColumn";
+import SideMenu from "@/app/components/side-menu/SideMenu";
 import NotFound from "@/app/not-found";
 
 export async function generateStaticParams() {

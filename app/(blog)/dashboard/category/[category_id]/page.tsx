@@ -4,7 +4,7 @@ import { getCategory } from "@/app/lib/service/blogServiceUnique";
 import { updateCategory, deleteCategory } from "@/app/action/actionCategory";
 import FormCategory from "@/app/components/blog/dashboard/form/FormCategory";
 import DeleteModal from "@/app/components/ui/DeleteModal";
-import NextLinkButton from "@/app/components/ui/NextLinkButton";
+import NextLinkButton from "@/app/components/ui/button/NextLinkButton";
 
 export const metadata: Metadata = {
   title: "カテゴリの編集",

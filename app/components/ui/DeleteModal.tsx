@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import toast from "react-hot-toast";
-
-import Button from "../ui/Button";
+import Button from "./button/Button";
 
 type DeleteModalProps = {
   DeleteName: string;

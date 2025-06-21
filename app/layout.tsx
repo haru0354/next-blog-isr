@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { notoSansJp } from "./util/font";
 import "./globals.css";
-import { notoSansJp } from "./components/util/font";
 
 const webSiteTitle = process.env.NEXT_PUBLIC_WEBSITE_TITLE;
 const webSiteDescription = process.env.NEXT_PUBLIC_WEBSITE_DESCRIPTION;

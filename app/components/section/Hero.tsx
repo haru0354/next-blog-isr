@@ -1,7 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
-import Button from "../ui/Button";
-import NextLinkButton from "../ui/NextLinkButton";
+import NextLinkButton from "../ui/button/NextLinkButton";
 
 type HeroProps = {
   title: string;

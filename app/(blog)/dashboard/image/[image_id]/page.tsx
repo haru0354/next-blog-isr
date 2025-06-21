@@ -2,7 +2,7 @@ import { getPostImage } from "@/app/lib/service/blogServiceUnique";
 import { deletePostImage, updatePostImage } from "@/app/action/actionPostImage";
 import FormPostImage from "@/app/components/blog/dashboard/form/FormPostImage";
 import DeleteModal from "@/app/components/ui/DeleteModal";
-import NextLinkButton from "@/app/components/ui/NextLinkButton";
+import NextLinkButton from "@/app/components/ui/button/NextLinkButton";
 
 const page = async ({ params }: { params: { image_id: string } }) => {
   const id = Number(params.image_id);
